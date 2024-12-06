@@ -26,6 +26,11 @@ public class ProductController {
         return ResponseEntity.ok(productService.getProductById(id));
     }
 
+    @GetMapping("/{productId}/availability")
+    public boolean isProductAvailable(@PathVariable Long productId, @RequestParam int quantity) {
+        return productService.isProductAvailable(productId, quantity);
+    }
+
     @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
         return ResponseEntity.ok(productService.createProduct(product));

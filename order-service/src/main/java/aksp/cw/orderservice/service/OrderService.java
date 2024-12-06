@@ -8,10 +8,13 @@ import java.util.List;
 
 @Service
 public class OrderService {
-    private final OrderRepository orderRepository;
 
-    public OrderService(OrderRepository orderRepository) {
+    private final OrderRepository orderRepository;
+    private final InventoryServiceClient inventoryServiceClient; // Добавлено
+
+    public OrderService(OrderRepository orderRepository, InventoryServiceClient inventoryServiceClient) {
         this.orderRepository = orderRepository;
+        this.inventoryServiceClient = inventoryServiceClient; // Внедрение зависимости
     }
 
     public List<Order> getAllOrders() {
@@ -24,6 +27,10 @@ public class OrderService {
     }
 
     public Order createOrder(Order order) {
+        boolean isAvailable = inventoryServiceClient.isProductAvailable(order.getProductId(), order.getQuantity());
+        if (!isAvailable) {
+            throw new RuntimeException("Product is not available in the requested quantity.");
+        }
         return orderRepository.save(order);
     }
 

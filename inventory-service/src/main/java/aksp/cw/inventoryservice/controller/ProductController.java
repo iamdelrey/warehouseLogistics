@@ -1,7 +1,7 @@
-package aksp.cw.inventoryservice;
+package aksp.cw.inventoryservice.controller;
 
-import aksp.cw.inventoryservice.Product;
-import aksp.cw.inventoryservice.ProductService;
+import aksp.cw.inventoryservice.model.Product;
+import aksp.cw.inventoryservice.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

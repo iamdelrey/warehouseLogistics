@@ -1,7 +1,7 @@
-package aksp.cw.inventoryservice;
+package aksp.cw.inventoryservice.service;
 
-import aksp.cw.inventoryservice.Product;
-import aksp.cw.inventoryservice.ProductRepository;
+import aksp.cw.inventoryservice.repository.ProductRepository;
+import aksp.cw.inventoryservice.model.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,7 +15,9 @@ public class ProductService {
     }
 
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        List<Product> products = productRepository.findAll();
+        System.out.println("Products retrieved from database: " + products);
+        return products;
     }
 
     public Product getProductById(Long id) {
@@ -23,8 +25,12 @@ public class ProductService {
     }
 
     public Product createProduct(Product product) {
-        return productRepository.save(product);
+        System.out.println("Saving product to database: " + product);
+        Product savedProduct = productRepository.save(product);
+        System.out.println("Product saved to database: " + savedProduct);
+        return savedProduct;
     }
+
 
     public Product updateProduct(Long id, Product updatedProduct) {
         Product product = getProductById(id);

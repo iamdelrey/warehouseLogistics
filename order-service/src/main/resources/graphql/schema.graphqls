@@ -1,17 +1,17 @@
-type Product {
+type Order {
     id: ID!
-    name: String!
+    productId: ID!
     quantity: Int!
-    price: Float!
+    status: String!
 }
 
 type Query {
-    products: [Product]!
-    product(id: ID!): Product
+    orders: [Order]!
+    order(id: ID!): Order
 }
 
 type Mutation {
-    createProduct(name: String!, quantity: Int!, price: Float!): Product
-    updateProduct(id: ID!, name: String, quantity: Int, price: Float): Product
-    deleteProduct(id: ID!): Boolean
+    createOrder(productId: ID!, quantity: Int!, status: String!): Order
+    updateOrder(id: ID!, productId: ID, quantity: Int, status: String): Order
+    deleteOrder(id: ID!): Boolean
 }

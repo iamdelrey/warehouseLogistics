@@ -1,13 +1,11 @@
+type Query {
+    products: [Product]
+}
 type Product {
     id: ID!
     name: String!
     quantity: Int!
     price: Float!
-}
-
-type Query {
-    products: [Product]!
-    product(id: ID!): Product
 }
 
 type Mutation {

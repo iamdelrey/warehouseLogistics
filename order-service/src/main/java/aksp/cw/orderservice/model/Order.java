@@ -1,22 +1,22 @@
-package aksp.cw.inventoryservice;
+package aksp.cw.orderservice.model;
 
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "products", schema = "inventory")
-public class Product {
+@Table(name = "orders", schema = "orders")
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private String name;
+    private Long productId;
 
     @Column(nullable = false)
     private Integer quantity;
 
     @Column(nullable = false)
-    private Double price;
+    private String status;
 
     public Long getId() {
         return id;
@@ -26,12 +26,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public Long getProductId() {
+        return productId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 
     public Integer getQuantity() {
@@ -42,11 +42,11 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public Double getPrice() {
-        return price;
+    public String getStatus() {
+        return status;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

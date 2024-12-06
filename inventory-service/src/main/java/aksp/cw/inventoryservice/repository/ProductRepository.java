@@ -1,8 +1,8 @@
-package aksp.cw.inventoryservice;
+package aksp.cw.inventoryservice.repository;
 
+import aksp.cw.inventoryservice.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import aksp.cw.inventoryservice.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {

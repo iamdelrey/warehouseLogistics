@@ -1,58 +1,56 @@
-/* Основные стили */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	margin: 0;
+	padding: 0;
+	background-color: #f9f9f9;
 }
 
 header {
-    background-color: #6200ea;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+	background: #333;
+	color: #fff;
+	padding: 1rem;
+	text-align: center;
 }
 
-nav a {
-    margin: 10px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+header h1 {
+	margin: 0;
 }
 
-nav a:hover {
-    text-decoration: underline;
+header nav a {
+	color: #fff;
+	text-decoration: none;
+	margin: 0 1rem;
+}
+
+header nav a:hover {
+	text-decoration: underline;
 }
 
 main {
-    padding: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-table th, table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-}
-
-table th {
-    background-color: #6200ea;
-    color: #fff;
+	margin: 2rem;
+	text-align: center;
 }
 
 button {
-    background-color: #6200ea;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 10px;
+	cursor: pointer;
+	border-radius: 5px;
 }
 
 button:hover {
-    background-color: #3700b3;
+	background-color: #45a049;
+}
+
+#analyticsResult {
+	margin-top: 2rem;
+	font-size: 18px;
 }

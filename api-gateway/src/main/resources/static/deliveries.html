@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Delivery CRUD</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <h1>Deliveries</h1>
+    <button onclick="loadDeliveries()">Load Deliveries</button>
+    <table id="deliveryTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Добавить доставку</h2>
+    <input type="number" id="deliveryOrderId" placeholder="Order ID">
+    <input type="text" id="deliveryStatus" placeholder="Status">
+    <button onclick="addDelivery()">Add Delivery</button>
+
+
+    <script src="js/deliveries.js"></script>
+</body>
+
+</html>

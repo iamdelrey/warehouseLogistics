@@ -1,24 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orders CRUD</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <h1>Orders</h1>
-    <button onclick="loadOrders()">Load Orders</button>
-    <table id="orderTable">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <header class="bg-blue-800 text-white shadow">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Orders</h1>
+                <nav class="space-x-4">
+                    <a href="index.html" class="text-white hover:underline">На главную</a>
+                    <a href="users.html" class="text-white hover:underline">Пользователи</a>
+                    <a href="deliveries.html" class="text-white hover:underline">Доставки</a>
+                    <a href="analytics.html" class="text-white hover:underline">Аналитика</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-xl font-semibold mb-4">Список заказов</h2>
+        <button onclick="loadOrders()" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+            Загрузить заказы
+        </button>
+
+        <div class="bg-white p-6 shadow-md rounded mt-6">
+            <table id="orderTable" class="table-auto w-full">
+                <thead class="bg-blue-800 text-white">
+                    <tr>
+                        <th class="px-4 py-2">ID</th>
+                        <th class="px-4 py-2">Статус</th>
+                        <th class="px-4 py-2">Действия</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-300 text-center">
+                    <!-- Dynamic Content -->
+                </tbody>
+            </table>
+        </div>
+
+        <h2 class="text-xl font-semibold mt-8 mb-4">Добавить заказ</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <input id="orderStatus" type="text" placeholder="Статус"
+                class="border border-gray-300 rounded py-2 px-4 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <button onclick="addOrder()"
+                class="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition">
+                Добавить заказ
+            </button>
+        </div>
+    </main>
+
+    <footer class="bg-blue-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Степанов Антон ИКБО-30-22. Все права защищены.</p>
+        </div>
+    </footer>
 
     <script src="js/orders.js"></script>
 </body>
+
 </html>

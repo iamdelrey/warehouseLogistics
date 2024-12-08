@@ -5,25 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warehouse Logistics</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
 
-    <header>
-        <h1>Система управления логистикой</h1>
-        <nav>
-            <a href="users.html">Пользователи</a>
-            <a href="orders.html">Заказы</a>
-            <a href="deliveries.html">Доставки</a>
-            <a href="analytics.html">Аналитика</a>
-        </nav>
+    <header class="bg-blue-800 text-white shadow">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Система управления логистикой</h1>
+                <nav class="space-x-4">
+                    <a href="users.html" class="text-white hover:underline">Пользователи</a>
+                    <a href="orders.html" class="text-white hover:underline">Заказы</a>
+                    <a href="deliveries.html" class="text-white hover:underline">Доставки</a>
+                    <a href="analytics.html" class="text-white hover:underline">Аналитика</a>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <main id="content">
-        <h2>Добро пожаловать!</h2>
+    <main id="content" class="container mx-auto px-4 py-8">
+        <h2 class="text-xl font-semibold mb-4">Добро пожаловать!</h2>
         <p>Нажмите на раздел, чтобы посмотреть данные.</p>
     </main>
+
+    <footer class="bg-blue-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Степанов Антон ИКБО-30-22. Все права защищены.</p>
+        </div>
+    </footer>
 
 </body>
 

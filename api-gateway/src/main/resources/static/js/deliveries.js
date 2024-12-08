@@ -8,12 +8,14 @@ async function loadDeliveries() {
 	deliveries.forEach(delivery => {
 		deliveryTableBody.innerHTML += `
             <tr>
-                <td>${delivery.id}</td>
-                <td>${delivery.orderId}</td>
-                <td>${delivery.status}</td>
-                <td>
-                    <button onclick="editDelivery(${delivery.id}, '${delivery.orderId}', '${delivery.status}')">Edit</button>
-                    <button onclick="deleteDelivery(${delivery.id})">Delete</button>
+                <td class="border px-4 py-2">${delivery.id}</td>
+                <td class="border px-4 py-2">${delivery.orderId}</td>
+                <td class="border px-4 py-2">${delivery.status}</td>
+                <td class="border px-4 py-2">
+                    <button onclick="deleteDelivery(${delivery.id})"
+                        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">
+                        Удалить
+                    </button>
                 </td>
             </tr>
         `
@@ -31,24 +33,7 @@ async function addDelivery() {
 	if (response.ok) {
 		loadDeliveries()
 	} else {
-		alert('Failed to add delivery')
-	}
-}
-
-async function editDelivery(id, orderId, status) {
-	const newOrderId = prompt('Enter new Order ID:', orderId)
-	const newStatus = prompt('Enter new Status:', status)
-	if (newOrderId && newStatus) {
-		const response = await fetch(`${API_URL}/${id}`, {
-			method: 'PUT',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ orderId: newOrderId, status: newStatus }),
-		})
-		if (response.ok) {
-			loadDeliveries()
-		} else {
-			alert('Failed to update delivery')
-		}
+		alert('Ошибка при добавлении доставки')
 	}
 }
 
@@ -57,6 +42,6 @@ async function deleteDelivery(id) {
 	if (response.ok) {
 		loadDeliveries()
 	} else {
-		alert('Failed to delete delivery')
+		alert('Ошибка при удалении доставки')
 	}
 }

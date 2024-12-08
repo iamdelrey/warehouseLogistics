@@ -1,31 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users CRUD</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <header>
-        <h1>Пользователи</h1>
-        <nav>
-            <a href="index.html">На главную</a>
-            <a href="orders.html">Заказы</a>
-            <a href="deliveries.html">Доставки</a>
-            <a href="analytics.html">Аналитика</a>
-        </nav>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Header -->
+    <header class="bg-blue-800 text-white shadow">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">Пользователи</h1>
+                <nav class="space-x-4">
+                    <a href="index.html" class="text-white hover:underline">На главную</a>
+                    <a href="orders.html" class="text-white hover:underline">Заказы</a>
+                    <a href="deliveries.html" class="text-white hover:underline">Доставки</a>
+                    <a href="analytics.html" class="text-white hover:underline">Аналитика</a>
+                </nav>
+            </div>
+        </div>
     </header>
 
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Add User Form -->
+        <h2 class="text-xl font-semibold mb-4">Добавить пользователя</h2>
 
-    <h2>Add User</h2>
-    <input type="text" id="userName" placeholder="Name">
-    <input type="email" id="userEmail" placeholder="Email">
-    <input type="password" id="userPassword" placeholder="Password">
+        <div class="bg-white p-6 shadow-md rounded mb-8">
+            <div class="mb-4">
+                <label for="userName" class="block text-gray-700 font-bold mb-2">Имя</label>
+                <input type="text" id="userName" placeholder="Введите имя"
+                    class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
 
-    <button onclick="addUser()">Add User</button>
+            <div class="mb-4">
+                <label for="userEmail" class="block text-gray-700 font-bold mb-2">Электронная почта</label>
+                <input type="email" id="userEmail" placeholder="Введите email"
+                    class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
 
+            <div class="mb-4">
+                <label for="userPassword" class="block text-gray-700 font-bold mb-2">Пароль</label>
+                <input type="password" id="userPassword" placeholder="Введите пароль"
+                    class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <button id="addUserBtn"
+                class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition w-full">
+                Добавить пользователя
+            </button>
+        </div>
+
+        <!-- View Users Section -->
+        <h2 class="text-xl font-semibold mb-4">Просмотр пользователей</h2>
+
+        <button id="loadUsersBtn" class="mb-4 bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition">
+            Загрузить пользователей
+        </button>
+
+        <div class="bg-white p-6 shadow-md rounded">
+            <table class="w-full table-auto">
+                <thead>
+                    <tr>
+                        <th class="px-4 py-2 bg-blue-800 text-white">ID</th>
+                        <th class="px-4 py-2 bg-blue-800 text-white">Имя</th>
+                        <th class="px-4 py-2 bg-blue-800 text-white">Email</th>
+                        <th class="px-4 py-2 bg-blue-800 text-white">Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable" class="text-center">
+                    <!-- Динамическое содержимое будет загружено сюда -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer class="bg-blue-800 text-white py-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Степанов Антон ИКБО-30-22. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Подключаем JS-файл -->
     <script src="js/users.js"></script>
 </body>
 

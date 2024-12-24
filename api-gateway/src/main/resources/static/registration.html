@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+<div class="bg-white p-8 rounded shadow-md w-96">
+    <h2 class="text-2xl font-bold mb-4 text-center text-blue-600">Регистрация</h2>
+    <form id="registrationForm">
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-bold mb-2">Имя</label>
+            <input type="text" id="name" name="name" placeholder="Введите ваше имя"
+                   class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="block text-gray-700 font-bold mb-2">Email</label>
+            <input type="email" id="email" name="email" placeholder="Введите ваш email"
+                   class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <div class="mb-4">
+            <label for="password" class="block text-gray-700 font-bold mb-2">Пароль</label>
+            <input type="password" id="password" name="password" placeholder="Введите ваш пароль"
+                   class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+        <button type="submit"
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+            Зарегистрироваться
+        </button>
+    </form>
+    <p class="text-gray-600 text-sm mt-4 text-center">
+        Уже есть аккаунт? <a href="login.html" class="text-blue-600 hover:underline">Войти</a>
+    </p>
+</div>
+</body>
+
+</html>

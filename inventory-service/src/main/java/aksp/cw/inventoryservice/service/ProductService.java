@@ -47,6 +47,6 @@ public class ProductService {
     public boolean isProductAvailable(Long productId, int quantity) {
         return productRepository.findById(productId)
                 .map(product -> product.getQuantity() >= quantity)
-                .orElse(false); // Вернуть false, если продукт не найден
+                .orElse(false);
     }
 }

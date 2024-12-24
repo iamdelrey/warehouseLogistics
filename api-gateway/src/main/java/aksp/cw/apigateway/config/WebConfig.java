@@ -1,4 +1,4 @@
-//package aksp.cw.apigateway.config;
+//package aksp.cw.apigateway.security;
 //
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
